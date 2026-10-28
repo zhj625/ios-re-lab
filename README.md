@@ -111,11 +111,14 @@ python src/patch_ibox_250.py input.ipa output.ipa
 
 ## Release 构建
 
-已验证的整合构建作为 GitHub Release 资产保存，不写入 Git 历史：
+两个已验证构建作为 [v1.0.0 Release](https://github.com/zhj625/ios-re-lab/releases/tag/v1.0.0) 资产保存，不写入 Git 历史：
 
-- [v1.0.0 · iBox-2.5.0-patched.ipa](https://github.com/zhj625/ios-re-lab/releases/tag/v1.0.0)
-- SHA-256：`fe1387194fc2ad3608a8dd9495b07d56db161e82e542f30a17ca08f6b84f107a`
-- 状态：需要重新签名后安装
+| 资产 | 更新策略 | IPA SHA-256 |
+| --- | --- | --- |
+| `iBox-2.5.0-baseline.ipa` | 去除常规广告并完成激励业务重定向，保留原始强制更新逻辑 | `68c283b9d87a13dd8a7214e704737502a8d3c64e67a90ab9f993fe2bd4301f64` |
+| `iBox-2.5.0-patched.ipa` | 在 baseline 基础上增加强更降级补丁 | `fe1387194fc2ad3608a8dd9495b07d56db161e82e542f30a17ca08f6b84f107a` |
+
+两者拥有相同的1029个归档路径，只有主 Mach-O 的4个字节不同，可作为强更分支修改前后的对照样本。两个资产安装前均需重新签名。
 
 ## 测试
 
