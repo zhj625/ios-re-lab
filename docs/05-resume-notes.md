@@ -8,7 +8,7 @@
 
 - 使用 REA、Python 与 Capstone 分析约 95.6 MB iOS IPA，解析 68.6 MB ARM64 Mach-O 的 Load Command、Objective-C Runtime 元数据与 Swift Reflection 字段，定位广告展示、奖励回调和版本更新控制流。
 - 重建关键业务状态机与 ARC 对象生命周期，设计82个等长指令补丁，覆盖4个常规展示入口、11组激励业务回调及1个强制更新分支，复用原有 reward/close 路径维持页面状态和资源释放语义。
-- 开发版本安全的 Python 补丁器，实现 SHA-256 白名单、逐指令 preimage、ARM64 `B/BL` 编码、非覆盖式 IPA 重打包与1029个归档项差异验证；广告与激励业务版本完成实际安装验证。
+- 开发版本安全的 Python 补丁器，实现 SHA-256 白名单、逐指令 preimage、ARM64 `B/BL` 编码、非覆盖式 IPA 重打包与1029个归档项差异验证；广告、激励业务和强更降级均完成实际安装及真实触发条件验证。
 
 ## 30秒介绍
 
@@ -36,7 +36,6 @@ Swift Reflection 字段描述给出了字段顺序，Objective-C ivar metadata �
 
 - 自动从 Mach-O 元数据发现类与回调，而不是维护固定偏移；
 - 为新旧版本生成函数级 diff；
-- 增加真实强更条件下的端到端测试记录；
+- 为后续版本增加强更路径自动化回归测试；
 - 将补丁清单导出为可审计 JSON；
 - 增加 Mach-O code signature 状态检查。
-
