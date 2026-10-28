@@ -109,6 +109,14 @@ python src/patch_ibox_250.py input.ipa output.ipa
 
 输出 IPA 的 Mach-O 代码签名已经失效，安装前必须使用自己的证书和描述文件重新签名。
 
+## Release 构建
+
+已验证的整合构建作为 GitHub Release 资产保存，不写入 Git 历史：
+
+- [v1.0.0 · iBox-2.5.0-patched.ipa](https://github.com/zhj625/ios-re-lab/releases/tag/v1.0.0)
+- SHA-256：`fe1387194fc2ad3608a8dd9495b07d56db161e82e542f30a17ca08f6b84f107a`
+- 状态：需要重新签名后安装
+
 ## 测试
 
 ```bash
@@ -128,4 +136,3 @@ python -m unittest discover -s tests -v
 ## 边界
 
 该仓库是针对一个固定版本样本的研究记录，不是通用 iOS 补丁框架。固定偏移、类布局和回调地址不能直接迁移到其他版本。静态分析能够证明指令和控制流关系，但不能替代所有运行时场景验证。
-
