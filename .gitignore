@@ -1,0 +1,13 @@
+*.ipa
+*.app
+Payload/
+extracted/
+output/
+*.log
+__pycache__/
+*.py[cod]
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
